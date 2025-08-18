@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Cafe__coffee</string>
+    <string name="cafe_coffee">Cafe_Coffee</string>
+    <string name="where_the_coffee_never_runs_out">“Where the coffee never runs out</string>
+    <string name="get_started">Get Started</string>
+    <string name="search_anything">Search anything....</string>
+    <string name="category">Category</string>
+    <string name="popular_coffee">Popular Coffee</string>
+</resources>
