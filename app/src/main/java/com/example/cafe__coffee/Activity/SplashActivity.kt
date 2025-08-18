@@ -9,6 +9,7 @@ import com.example.cafe__coffee.databinding.ActivitySplashBinding
 
 class SplashActivity : AppCompatActivity() {
 
+
     lateinit var binding: ActivitySplashBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
