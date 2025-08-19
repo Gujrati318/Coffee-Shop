@@ -4,7 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import com.example.cafe__coffee.MainActivity
+import com.example.cafe__coffee.Activity.MainActivity
 import com.example.cafe__coffee.databinding.ActivitySplashBinding
 
 class SplashActivity : AppCompatActivity() {
