@@ -8,6 +8,7 @@ import com.example.cafe__coffee.Domain.itemsModel
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.Query
 import com.google.firebase.database.ValueEventListener
 
 class MainRepository {
@@ -71,5 +72,16 @@ class MainRepository {
             }
         })
         return listData
+    }
+
+    fun loadItemCategory(categoryId: String): LiveData<MutableList<itemsModel>>{
+        val itemLiveData= MutableLiveData<MutableList<itemsModel>>()
+        val ref=firebaseDatabase.getReference("items")
+        val query: Query=ref.orderByChild("categoryId").equalTo(categoryId)
+
+        query:addlistenerforsinglevalueevent(object:valueEventListener{
+            )
+        }
+
     }
 }

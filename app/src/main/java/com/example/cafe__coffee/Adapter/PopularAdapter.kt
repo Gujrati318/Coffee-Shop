@@ -1,11 +1,13 @@
 package com.example.cafe__coffee.Adapter
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewbinding.ViewBinding
 import com.bumptech.glide.Glide
+import com.example.cafe__coffee.Activity.DetailActivity
 import com.example.cafe__coffee.Domain.itemsModel
 import com.example.cafe__coffee.databinding.ViewholderCategoryBinding
 import com.example.cafe__coffee.databinding.ViewholderPopularBinding
@@ -26,8 +28,14 @@ class PopularAdapter(val items: MutableList<itemsModel>):RecyclerView.Adapter<Po
         holder.binding.priceTxt.text= "$" + items[position].price.toString()
 
         Glide.with(context)
-            .load(items[position].picUri[0])
+            .load(items[position].picUrl[0])
             .into(holder.binding.pic)
+
+        holder.itemView.setOnClickListener {
+           val intent= Intent(context, DetailActivity::class.java)
+            intent.putExtra("object",items[position])
+            context.startActivity(intent)
+        }
     }
 
     override fun getItemCount(): Int =items.size

@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
         viewModel.loadBanner().observeForever {
             Glide.with(this@MainActivity)
                 .load(it[0].url)
-                .into(binding.Banner)
+                .into(binding.banner)
             binding.progressBarBanner.visibility = View.GONE
         }
         viewModel.loadBanner()
