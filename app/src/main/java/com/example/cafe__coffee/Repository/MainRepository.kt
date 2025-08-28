@@ -79,9 +79,21 @@ class MainRepository {
         val ref=firebaseDatabase.getReference("items")
         val query: Query=ref.orderByChild("categoryId").equalTo(categoryId)
 
-        query:addlistenerforsinglevalueevent(object:valueEventListener{
-            )
-        }
+       query.addValueEventListener(object: ValueEventListener{
+           override fun onDataChange(snapshot: DataSnapshot) {
+               val list = mutableListOf<itemsModel>()
+               for (childSnapshot in snapshot.children) {
+                   val item = childSnapshot.getValue(itemsModel::class.java)
+                   item?.let { list.add(it) }
+               }
+               itemLiveData.value = list
+           }
 
+           override fun onCancelled(error: DatabaseError) {
+               TODO("Not yet implemented")
+           }
+
+       })
+        return itemLiveData
     }
 }

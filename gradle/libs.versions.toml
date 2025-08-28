@@ -1,5 +1,5 @@
 [versions]
-agp = "9.0.0-alpha01"
+agp = "9.0.0-alpha02"
 glide = "4.16.0"
 gson = "2.13.1"
 kotlin = "2.0.21"
